@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dimension"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{190A4358-93C6-4399-A7DF-A6584BCBEEE5}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{D453E09A-F55F-4409-99FA-7826CD66B8F8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -252,160 +252,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\DimCustomer\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DimCustomer\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DimCustomer\Data Conversion.Inputs[Data Conversion Input].Columns[CustomerID]"
-                      cachedDataType="i4"
-                      cachedName="CustomerID"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[CustomerID]" />
-                    <inputColumn
-                      refId="Package\DimCustomer\Data Conversion.Inputs[Data Conversion Input].Columns[ModifiedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="ModifiedDate"
-                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[ModifiedDate]" />
-                    <inputColumn
-                      refId="Package\DimCustomer\Data Conversion.Inputs[Data Conversion Input].Columns[StoreID]"
-                      cachedDataType="i4"
-                      cachedName="StoreID"
-                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[StoreID]" />
-                    <inputColumn
-                      refId="Package\DimCustomer\Data Conversion.Inputs[Data Conversion Input].Columns[PersonID]"
-                      cachedDataType="i4"
-                      cachedName="PersonID"
-                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[PersonID]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\DimCustomer\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[CustomerKey]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[CustomerKey]"
-                      name="CustomerKey"
-                      precision="18"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimCustomer\Sort.Outputs[Sort Output].Columns[CustomerID]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]"
-                      name="ModifiedNewDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimCustomer\Sort.Outputs[Sort Output].Columns[ModifiedDate]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[StoreNewID]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[StoreNewID]"
-                      name="StoreNewID"
-                      precision="18"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimCustomer\Sort.Outputs[Sort Output].Columns[StoreID]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[PersonNewID]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[PersonNewID]"
-                      name="PersonNewID"
-                      precision="18"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimCustomer\Sort.Outputs[Sort Output].Columns[PersonID]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\DimCustomer\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DimCustomer\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -419,13 +265,12 @@
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DimCustomer\Derived Column.Inputs[Derived Column Input].Columns[StoreNewID]"
-                      cachedDataType="numeric"
-                      cachedName="StoreNewID"
-                      cachedPrecision="18"
+                      refId="Package\DimCustomer\Derived Column.Inputs[Derived Column Input].Columns[PersonID]"
+                      cachedDataType="i4"
+                      cachedName="PersonID"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[StoreNewID]"
+                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[PersonID]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -433,23 +278,22 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[StoreNewID]}) ? -1 : #{Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[StoreNewID]}</property>
+                          name="Expression">[ISNULL](#{Package\DimCustomer\Sort.Outputs[Sort Output].Columns[PersonID]}) ? -1 : #{Package\DimCustomer\Sort.Outputs[Sort Output].Columns[PersonID]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(StoreNewID) ? -1 : StoreNewID</property>
+                          name="FriendlyExpression">ISNULL(PersonID) ? -1 : PersonID</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DimCustomer\Derived Column.Inputs[Derived Column Input].Columns[PersonNewID]"
-                      cachedDataType="numeric"
-                      cachedName="PersonNewID"
-                      cachedPrecision="18"
+                      refId="Package\DimCustomer\Derived Column.Inputs[Derived Column Input].Columns[StoreID]"
+                      cachedDataType="i4"
+                      cachedName="StoreID"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[PersonNewID]"
+                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[StoreID]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -457,13 +301,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[PersonNewID]}) ? -1 : #{Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[PersonNewID]}</property>
+                          name="Expression">[ISNULL](#{Package\DimCustomer\Sort.Outputs[Sort Output].Columns[StoreID]}) ? -1 : #{Package\DimCustomer\Sort.Outputs[Sort Output].Columns[StoreID]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(PersonNewID) ? -1 : PersonNewID</property>
+                          name="FriendlyExpression">ISNULL(StoreID) ? -1 : StoreID</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -520,7 +364,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DimCustomer]</property>
+                  name="OpenRowset">[OLE DB DimCustomer]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -554,7 +398,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">TABLOCK</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -597,32 +441,30 @@
                       externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
                       lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[rowguid]" />
                     <inputColumn
-                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerKey]"
-                      cachedDataType="numeric"
-                      cachedName="CustomerKey"
-                      cachedPrecision="18"
-                      externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[CustomerKey]" />
+                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[CustomerID]" />
                     <inputColumn
-                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedNewDate]"
-                      cachedDataType="date"
-                      cachedName="ModifiedNewDate"
-                      externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedNewDate]"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]" />
+                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PersonID]"
+                      cachedDataType="i4"
+                      cachedName="PersonID"
+                      externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[PersonID]" />
                     <inputColumn
-                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StoreNewID]"
-                      cachedDataType="numeric"
-                      cachedName="StoreNewID"
-                      cachedPrecision="18"
-                      externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreNewID]"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[StoreNewID]" />
+                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StoreID]"
+                      cachedDataType="i4"
+                      cachedName="StoreID"
+                      externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreID]"
+                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[StoreID]" />
                     <inputColumn
-                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PersonNewID]"
-                      cachedDataType="numeric"
-                      cachedName="PersonNewID"
-                      cachedPrecision="18"
-                      externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonNewID]"
-                      lineageId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output].Columns[PersonNewID]" />
+                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\DimCustomer\Sort.Outputs[Sort Output].Columns[ModifiedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -641,24 +483,21 @@
                       dataType="guid"
                       name="rowguid" />
                     <externalMetadataColumn
-                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
-                      dataType="numeric"
-                      name="CustomerKey"
-                      precision="18" />
+                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
                     <externalMetadataColumn
-                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedNewDate]"
+                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                      dataType="i4"
+                      name="PersonID" />
+                    <externalMetadataColumn
+                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreID]"
+                      dataType="i4"
+                      name="StoreID" />
+                    <externalMetadataColumn
+                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
                       dataType="dbTimeStamp"
-                      name="ModifiedNewDate" />
-                    <externalMetadataColumn
-                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreNewID]"
-                      dataType="numeric"
-                      name="StoreNewID"
-                      precision="18" />
-                    <externalMetadataColumn
-                      refId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonNewID]"
-                      dataType="numeric"
-                      name="PersonNewID"
-                      precision="18" />
+                      name="ModifiedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -936,11 +775,6 @@
           </components>
           <paths>
             <path
-              refId="Package\DimCustomer.Paths[Data Conversion Output]"
-              endId="Package\DimCustomer\Derived Column.Inputs[Derived Column Input]"
-              name="Data Conversion Output"
-              startId="Package\DimCustomer\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\DimCustomer.Paths[Derived Column Output]"
               endId="Package\DimCustomer\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
@@ -952,7 +786,7 @@
               startId="Package\DimCustomer\Customer.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DimCustomer.Paths[Sort Output]"
-              endId="Package\DimCustomer\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\DimCustomer\Derived Column.Inputs[Derived Column Input]"
               name="Sort Output"
               startId="Package\DimCustomer\Sort.Outputs[Sort Output]" />
           </paths>
@@ -1978,136 +1812,6 @@
           version="1">
           <components>
             <component
-              refId="Package\DimProduct\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DimProduct\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DimProduct\Data Conversion.Inputs[Data Conversion Input].Columns[ProductID]"
-                      cachedDataType="i4"
-                      cachedName="ProductID"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductID]" />
-                    <inputColumn
-                      refId="Package\DimProduct\Data Conversion.Inputs[Data Conversion Input].Columns[ModifiedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="ModifiedDate"
-                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[ModifiedDate]" />
-                    <inputColumn
-                      refId="Package\DimProduct\Data Conversion.Inputs[Data Conversion Input].Columns[Color]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Color"
-                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[Color]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\DimProduct\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output].Columns[ProductNewID]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output].Columns[ProductNewID]"
-                      name="ProductNewID"
-                      precision="18"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductID]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]"
-                      name="ModifiedNewDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[ModifiedDate]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output].Columns[NewColor]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output].Columns[NewColor]"
-                      name="NewColor"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Color]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\DimProduct\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DimProduct\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -2142,6 +1846,267 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">ISNULL(Color) ? "Unknown" : Color</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[Size]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Size"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[Size]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Size]}) ? "N/A" : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Size]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Size) ? "N/A" : Size</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[SizeUnitMeasureCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SizeUnitMeasureCode"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[SizeUnitMeasureCode]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[SizeUnitMeasureCode]}) ? "N/A" : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[SizeUnitMeasureCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(SizeUnitMeasureCode) ? "N/A" : SizeUnitMeasureCode</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[WeightUnitMeasureCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="WeightUnitMeasureCode"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[WeightUnitMeasureCode]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[WeightUnitMeasureCode]}) ? "N/A" : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[WeightUnitMeasureCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(WeightUnitMeasureCode) ? "N/A" : WeightUnitMeasureCode</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[Weight]"
+                      cachedDataType="numeric"
+                      cachedName="Weight"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[Weight]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Weight]}) ? -1 : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Weight]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Weight) ? -1 : Weight</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[ProductLine]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="ProductLine"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductLine]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductLine]}) ? "NA" : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductLine]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(ProductLine) ? "NA" : ProductLine</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[Class]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="Class"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[Class]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Class]}) ? "NA" : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Class]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Class) ? "NA" : Class</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[Style]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="Style"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[Style]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Style]}) ? "NA" : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[Style]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Style) ? "NA" : Style</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[ProductSubcategoryID]"
+                      cachedDataType="i4"
+                      cachedName="ProductSubcategoryID"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductSubcategoryID]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductSubcategoryID]}) ? -1 : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductSubcategoryID]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(ProductSubcategoryID) ? -1 : ProductSubcategoryID</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[ProductModelID]"
+                      cachedDataType="i4"
+                      cachedName="ProductModelID"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductModelID]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductModelID]}) ? -1 : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductModelID]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(ProductModelID) ? -1 : ProductModelID</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[SellEndDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SellEndDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[SellEndDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[SellEndDate]}) ? (DT_DBTIMESTAMP)"1900-01-01 00:00:00.000" : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[SellEndDate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(SellEndDate) ? (DT_DBTIMESTAMP)"1900-01-01 00:00:00.000" : SellEndDate</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimProduct\Derived Column.Inputs[Derived Column Input].Columns[DiscontinuedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DiscontinuedDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[DiscontinuedDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\DimProduct\Sort.Outputs[Sort Output].Columns[DiscontinuedDate]}) ? (DT_DBTIMESTAMP)"1900-01-01 00:00:00.000" : #{Package\DimProduct\Sort.Outputs[Sort Output].Columns[DiscontinuedDate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(DiscontinuedDate) ? (DT_DBTIMESTAMP)"1900-01-01 00:00:00.000" : DiscontinuedDate</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -2198,7 +2163,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DimProduct]</property>
+                  name="OpenRowset">[dbo].[OLE DB DimProd]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2232,7 +2197,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">TABLOCK</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -2404,18 +2369,18 @@
                       externalMetadataColumnId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
                       lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[rowguid]" />
                     <inputColumn
-                      refId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductNewID]"
-                      cachedDataType="numeric"
-                      cachedName="ProductNewID"
-                      cachedPrecision="18"
-                      externalMetadataColumnId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductNewID]"
-                      lineageId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output].Columns[ProductNewID]" />
+                      refId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[ModifiedDate]" />
                     <inputColumn
-                      refId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedNewDate]"
-                      cachedDataType="date"
-                      cachedName="ModifiedNewDate"
-                      externalMetadataColumnId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedNewDate]"
-                      lineageId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]" />
+                      refId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\DimProduct\Sort.Outputs[Sort Output].Columns[ProductID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2523,14 +2488,13 @@
                       dataType="guid"
                       name="rowguid" />
                     <externalMetadataColumn
-                      refId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductNewID]"
-                      dataType="numeric"
-                      name="ProductNewID"
-                      precision="18" />
-                    <externalMetadataColumn
-                      refId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedNewDate]"
+                      refId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
                       dataType="dbTimeStamp"
-                      name="ModifiedNewDate" />
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3919,11 +3883,6 @@
           </components>
           <paths>
             <path
-              refId="Package\DimProduct.Paths[Data Conversion Output]"
-              endId="Package\DimProduct\Derived Column.Inputs[Derived Column Input]"
-              name="Data Conversion Output"
-              startId="Package\DimProduct\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\DimProduct.Paths[Derived Column Output]"
               endId="Package\DimProduct\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
@@ -3935,7 +3894,7 @@
               startId="Package\DimProduct\ProductionProduit.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DimProduct.Paths[Sort Output]"
-              endId="Package\DimProduct\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\DimProduct\Derived Column.Inputs[Derived Column Input]"
               name="Sort Output"
               startId="Package\DimProduct\Sort.Outputs[Sort Output]" />
           </paths>
@@ -4051,108 +4010,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\DimSalesPerson\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DimSalesPerson\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DimSalesPerson\Data Conversion.Inputs[Data Conversion Input].Columns[BusinessEntityID]"
-                      cachedDataType="i4"
-                      cachedName="BusinessEntityID"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[BusinessEntityID]" />
-                    <inputColumn
-                      refId="Package\DimSalesPerson\Data Conversion.Inputs[Data Conversion Input].Columns[ModifiedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="ModifiedDate"
-                      lineageId="Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[ModifiedDate]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\DimSalesPerson\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[BusinessEntityKey]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[BusinessEntityKey]"
-                      name="BusinessEntityKey"
-                      precision="18"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[BusinessEntityID]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]"
-                      name="ModifiedNewDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[ModifiedDate]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\DimSalesPerson\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DimSalesPerson\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -4166,13 +4023,13 @@
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DimSalesPerson\Derived Column.Inputs[Derived Column Input].Columns[BusinessEntityKey]"
-                      cachedDataType="numeric"
-                      cachedName="BusinessEntityKey"
-                      cachedPrecision="18"
+                      refId="Package\DimSalesPerson\Derived Column.Inputs[Derived Column Input].Columns[BusinessEntityID]"
+                      cachedDataType="i4"
+                      cachedName="BusinessEntityID"
+                      cachedSortKeyPosition="1"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[BusinessEntityKey]"
+                      lineageId="Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[BusinessEntityID]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -4180,13 +4037,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[BusinessEntityKey]}) ? -1 : #{Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[BusinessEntityKey]}</property>
+                          name="Expression">[ISNULL](#{Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[BusinessEntityID]}) ? -1 : #{Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[BusinessEntityID]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(BusinessEntityKey) ? -1 : BusinessEntityKey</property>
+                          name="FriendlyExpression">ISNULL(BusinessEntityID) ? -1 : BusinessEntityID</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -4243,7 +4100,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DimSalesPerson]</property>
+                  name="OpenRowset">[OLE DB DimSalesPerson]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4342,18 +4199,18 @@
                       externalMetadataColumnId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
                       lineageId="Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[rowguid]" />
                     <inputColumn
-                      refId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BusinessEntityKey]"
-                      cachedDataType="numeric"
-                      cachedName="BusinessEntityKey"
-                      cachedPrecision="18"
-                      externalMetadataColumnId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityKey]"
-                      lineageId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[BusinessEntityKey]" />
+                      refId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BusinessEntityID]"
+                      cachedDataType="i4"
+                      cachedName="BusinessEntityID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                      lineageId="Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[BusinessEntityID]" />
                     <inputColumn
-                      refId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedNewDate]"
-                      cachedDataType="date"
-                      cachedName="ModifiedNewDate"
-                      externalMetadataColumnId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedNewDate]"
-                      lineageId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]" />
+                      refId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\DimSalesPerson\Sort.Outputs[Sort Output].Columns[ModifiedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4386,14 +4243,13 @@
                       dataType="guid"
                       name="rowguid" />
                     <externalMetadataColumn
-                      refId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityKey]"
-                      dataType="numeric"
-                      name="BusinessEntityKey"
-                      precision="18" />
+                      refId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                      dataType="i4"
+                      name="BusinessEntityID" />
                     <externalMetadataColumn
-                      refId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedNewDate]"
+                      refId="Package\DimSalesPerson\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
                       dataType="dbTimeStamp"
-                      name="ModifiedNewDate" />
+                      name="ModifiedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4975,11 +4831,6 @@
           </components>
           <paths>
             <path
-              refId="Package\DimSalesPerson.Paths[Data Conversion Output]"
-              endId="Package\DimSalesPerson\Derived Column.Inputs[Derived Column Input]"
-              name="Data Conversion Output"
-              startId="Package\DimSalesPerson\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\DimSalesPerson.Paths[Derived Column Output]"
               endId="Package\DimSalesPerson\Conditional Split.Inputs[Conditional Split Input]"
               name="Derived Column Output"
@@ -4991,7 +4842,7 @@
               startId="Package\DimSalesPerson\SalesPerson.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DimSalesPerson.Paths[Sort Output]"
-              endId="Package\DimSalesPerson\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\DimSalesPerson\Derived Column.Inputs[Derived Column Input]"
               name="Sort Output"
               startId="Package\DimSalesPerson\Sort.Outputs[Sort Output]" />
             <path
@@ -5853,7 +5704,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DimSalesTerritory1]</property>
+                  name="OpenRowset">[OLE DB DimTerritory]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -5887,7 +5738,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">TABLOCK</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -5967,6 +5818,25 @@
                       cachedPrecision="18"
                       externalMetadataColumnId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryNewID]"
                       lineageId="Package\DimTerritory\Data Conversion.Outputs[Data Conversion Output].Columns[TerritoryNewID]" />
+                    <inputColumn
+                      refId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedNewDate]"
+                      cachedDataType="date"
+                      cachedName="ModifiedNewDate"
+                      externalMetadataColumnId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedNewDate]"
+                      lineageId="Package\DimTerritory\Data Conversion.Outputs[Data Conversion Output].Columns[ModifiedNewDate]" />
+                    <inputColumn
+                      refId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
+                      lineageId="Package\DimTerritory\Sort.Outputs[Sort Output].Columns[TerritoryID]" />
+                    <inputColumn
+                      refId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\DimTerritory\Sort.Outputs[Sort Output].Columns[ModifiedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6014,6 +5884,14 @@
                       refId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedNewDate]"
                       dataType="dbTimeStamp"
                       name="ModifiedNewDate" />
+                    <externalMetadataColumn
+                      refId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\DimTerritory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -6719,7 +6597,7 @@
     design-time-name="Package\DimCustomer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DimCustomer\OLE DB Destination"
@@ -6729,10 +6607,6 @@
           Id="Package\DimCustomer\Derived Column"
           TopLeft="265.714286279922,263.05882329883" />
         <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\DimCustomer\Data Conversion"
-          TopLeft="103.571428791905,193.47058806571" />
-        <NodeLayout
           Size="123.2,41.6"
           Id="Package\DimCustomer\Customer"
           TopLeft="100.999997728637,26.5294113908363" />
@@ -6740,40 +6614,6 @@
           Size="97.6,41.6"
           Id="Package\DimCustomer\Sort"
           TopLeft="104.285714507711,112.105882263792" />
-        <EdgeLayout
-          Id="Package\DimCustomer.Paths[Sort Output]"
-          TopLeft="153.085714507711,153.705882263792">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="28.0857142841938,39.7647058019176"
-              Start="0,0"
-              End="28.0857142841938,32.2647058019176">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.8823529009588" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.8823529009588"
-                    Point2="0,19.8823529009588"
-                    Point3="4,19.8823529009588" />
-                  <mssgle:LineSegment
-                    End="24.0857142841938,19.8823529009588" />
-                  <mssgle:CubicBezierSegment
-                    Point1="24.0857142841938,19.8823529009588"
-                    Point2="28.0857142841938,19.8823529009588"
-                    Point3="28.0857142841938,23.8823529009588" />
-                  <mssgle:LineSegment
-                    End="28.0857142841938,32.2647058019176" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\DimCustomer.Paths[OLE DB Source Output]"
           TopLeft="162.599997728637,68.1294113908363">
@@ -6843,31 +6683,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DimCustomer.Paths[Data Conversion Output]"
-          TopLeft="181.171428791905,235.07058806571">
+          Id="Package\DimCustomer.Paths[Sort Output]"
+          TopLeft="153.085714507711,153.705882263792">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="160.942857488017,27.9882352331208"
+              EndConnector="189.028571772211,109.352941035038"
               Start="0,0"
-              End="160.942857488017,20.4882352331208">
+              End="189.028571772211,101.852941035038">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.9941176165604" />
+                    End="0,50.676470517519" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.9941176165604"
-                    Point2="0,13.9941176165604"
-                    Point3="4,13.9941176165604" />
+                    Point1="0,50.676470517519"
+                    Point2="0,54.676470517519"
+                    Point3="4,54.676470517519" />
                   <mssgle:LineSegment
-                    End="156.942857488017,13.9941176165604" />
+                    End="185.028571772211,54.676470517519" />
                   <mssgle:CubicBezierSegment
-                    Point1="156.942857488017,13.9941176165604"
-                    Point2="160.942857488017,13.9941176165604"
-                    Point3="160.942857488017,17.9941176165604" />
+                    Point1="185.028571772211,54.676470517519"
+                    Point2="189.028571772211,54.676470517519"
+                    Point3="189.028571772211,58.676470517519" />
                   <mssgle:LineSegment
-                    End="160.942857488017,20.4882352331208" />
+                    End="189.028571772211,101.852941035038" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6909,11 +6749,15 @@
     design-time-name="Package\DimDate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="119.2,41.6"
           Id="Package\DimDate\DimDate"
           TopLeft="206.999996915459,35.9999994635581" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DimDate\OLE DB Destination"
+          TopLeft="289.999995678663,372.999994441867" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\DimDate\Data Conversion"
@@ -6941,7 +6785,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDate.Paths[Data Conversion Output]"
+          TopLeft="280.599996975064,264.599996677041">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.5999987035989,108.399997764826"
+              Start="0,0"
+              End="94.5999987035989,100.899997764826">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.1999988824129" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.1999988824129"
+                    Point2="0,54.1999988824129"
+                    Point3="4,54.1999988824129" />
+                  <mssgle:LineSegment
+                    End="90.5999987035989,54.1999988824129" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.5999987035989,54.1999988824129"
+                    Point2="94.5999987035989,54.1999988824129"
+                    Point3="94.5999987035989,58.1999988824129" />
+                  <mssgle:LineSegment
+                    End="94.5999987035989,100.899997764826" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6975,45 +6857,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\DimDate\OLE DB Destination"
-          TopLeft="289.999995678663,372.999994441867" />
-        <EdgeLayout
-          Id="Package\DimDate.Paths[Data Conversion Output]"
-          TopLeft="280.599996975064,264.599996677041">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94.5999987035989,108.399997764826"
-              Start="0,0"
-              End="94.5999987035989,100.899997764826">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.1999988824129" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,50.1999988824129"
-                    Point2="0,54.1999988824129"
-                    Point3="4,54.1999988824129" />
-                  <mssgle:LineSegment
-                    End="90.5999987035989,54.1999988824129" />
-                  <mssgle:CubicBezierSegment
-                    Point1="90.5999987035989,54.1999988824129"
-                    Point2="94.5999987035989,54.1999988824129"
-                    Point3="94.5999987035989,58.1999988824129" />
-                  <mssgle:LineSegment
-                    End="94.5999987035989,100.899997764826" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7049,23 +6895,23 @@
     design-time-name="Package\DimProduct">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\DimProduct\ProductionProduit"
-          TopLeft="208.999996885657,30.999999538064" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\DimProduct\Sort"
           TopLeft="252.999996230006,116.999998256564" />
         <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\DimProduct\Data Conversion"
-          TopLeft="225.999996632337,194.999997094274" />
-        <NodeLayout
           Size="170.4,41.6"
           Id="Package\DimProduct\OLE DB Destination"
           TopLeft="439.999993443489,422.999993696809" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\DimProduct\ProductionProduit"
+          TopLeft="208.999996885657,30.999999538064" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\DimProduct\Derived Column"
+          TopLeft="273.999995917082,276.999996587634" />
         <EdgeLayout
           Id="Package\DimProduct.Paths[OLE DB Source Output]"
           TopLeft="289.799996885657,72.599999538064">
@@ -7102,56 +6948,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DimProduct.Paths[Sort Output]"
-          TopLeft="302.699996431172,158.599998256564">
+          TopLeft="301.799996230006,158.599998256564">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.3999988377095"
+              EndConnector="48.599999687076,118.39999833107"
               Start="0,0"
-              End="0,28.8999988377095">
+              End="48.599999687076,110.89999833107">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.8999988377095" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\DimProduct\Derived Column"
-          TopLeft="273.999995917082,276.999996587634" />
-        <EdgeLayout
-          Id="Package\DimProduct.Paths[Data Conversion Output]"
-          TopLeft="303.599996632337,236.599997094274">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="46.7999992847443,40.3999994933605"
-              Start="0,0"
-              End="46.7999992847443,32.8999994933605">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.1999997466802" />
+                    End="0,55.199999165535" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.1999997466802"
-                    Point2="0,20.1999997466802"
-                    Point3="4,20.1999997466802" />
+                    Point1="0,55.199999165535"
+                    Point2="0,59.199999165535"
+                    Point3="4,59.199999165535" />
                   <mssgle:LineSegment
-                    End="42.7999992847443,20.1999997466802" />
+                    End="44.599999687076,59.199999165535" />
                   <mssgle:CubicBezierSegment
-                    Point1="42.7999992847443,20.1999997466802"
-                    Point2="46.7999992847443,20.1999997466802"
-                    Point3="46.7999992847443,24.1999997466802" />
+                    Point1="44.599999687076,59.199999165535"
+                    Point2="48.599999687076,59.199999165535"
+                    Point3="48.599999687076,63.199999165535" />
                   <mssgle:LineSegment
-                    End="46.7999992847443,32.8999994933605" />
+                    End="48.599999687076,110.89999833107" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7168,30 +6988,32 @@
               StartConnector="{assembly:Null}"
               EndConnector="174.799997526407,104.399997109175"
               Start="0,0"
-              End="174.799997526407,96.8999971091747">
+              End="174.799997526407,96.899997109175">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.1999985545874" />
+                    End="0,48.1999985545875" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48.1999985545874"
-                    Point2="0,52.1999985545874"
-                    Point3="4,52.1999985545874" />
+                    Point1="0,48.1999985545875"
+                    Point2="0,52.1999985545875"
+                    Point3="4,52.1999985545875" />
                   <mssgle:LineSegment
-                    End="170.799997526407,52.1999985545874" />
+                    End="170.799997526407,52.1999985545875" />
                   <mssgle:CubicBezierSegment
-                    Point1="170.799997526407,52.1999985545874"
-                    Point2="174.799997526407,52.1999985545874"
-                    Point3="174.799997526407,56.1999985545874" />
+                    Point1="170.799997526407,52.1999985545875"
+                    Point2="174.799997526407,52.1999985545875"
+                    Point3="174.799997526407,56.1999985545875" />
                   <mssgle:LineSegment
-                    End="174.799997526407,96.8999971091747" />
+                    End="174.799997526407,96.899997109175" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="79.3999987632035,57.1999985545875,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7229,81 +7051,25 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="134.4,41.6"
-          Id="Package\DimSalesPerson\SalesPerson"
-          TopLeft="257.999996155501,24.9999996274711" />
+          Size="97.6,41.6"
+          Id="Package\DimSalesPerson\Sort"
+          TopLeft="272.999995931983,114.999998286367" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\DimSalesPerson\Derived Column"
           TopLeft="241.999996393919,310.999995365739" />
         <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\DimSalesPerson\Data Conversion"
-          TopLeft="247.999996304512,206.99999691546" />
-        <EdgeLayout
-          Id="Package\DimSalesPerson.Paths[Data Conversion Output]"
-          TopLeft="321.999996349216,248.59999691546">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62.3999984502792"
-              Start="0,0"
-              End="0,54.8999984502792">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.8999984502792" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\DimSalesPerson\Conditional Split"
-          TopLeft="585.99999126792,341.999994903803" />
-        <EdgeLayout
-          Id="Package\DimSalesPerson.Paths[Derived Column Output]"
-          TopLeft="394.799996393919,331.799995365739">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="191.199994874,30.9999995380641"
-              Start="0,0"
-              End="183.699994874,30.9999995380641">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="91.5999974370002,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="91.5999974370002,0"
-                    Point2="95.5999974370002,0"
-                    Point3="95.5999974370002,4" />
-                  <mssgle:LineSegment
-                    End="95.5999974370002,26.9999995380641" />
-                  <mssgle:CubicBezierSegment
-                    Point1="95.5999974370002,26.9999995380641"
-                    Point2="95.5999974370002,30.9999995380641"
-                    Point3="99.5999974370002,30.9999995380641" />
-                  <mssgle:LineSegment
-                    End="183.699994874,30.9999995380641" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="134.4,41.6"
+          Id="Package\DimSalesPerson\SalesPerson"
+          TopLeft="257.999996155501,24.9999996274711" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DimSalesPerson\OLE DB Destination"
           TopLeft="637.999990493059,466.199993756414" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\DimSalesPerson\Conditional Split"
+          TopLeft="585.99999126792,341.999994903803" />
         <EdgeLayout
           Id="Package\DimSalesPerson.Paths[ValidRows]"
           TopLeft="663.19999126792,383.599994903803">
@@ -7336,14 +7102,10 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.64923789381969,46.2999994263053,46.7015234375,9.7490234375"
+              BoundingBox="6.6492378938197,46.2999994263053,46.7015234375,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\DimSalesPerson\Sort"
-          TopLeft="272.999995931983,114.999998286367" />
         <EdgeLayout
           Id="Package\DimSalesPerson.Paths[OLE DB Source Output]"
           TopLeft="323.499996043742,66.5999996274711">
@@ -7367,19 +7129,53 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DimSalesPerson.Paths[Sort Output]"
-          TopLeft="323.699996118248,156.599998286367">
+          Id="Package\DimSalesPerson.Paths[Derived Column Output]"
+          TopLeft="394.799996393919,331.799995365739">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.3999986290932"
+              EndConnector="191.199994874001,30.999999538064"
               Start="0,0"
-              End="0,42.8999986290932">
+              End="183.699994874001,30.999999538064">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.8999986290932" />
+                    End="91.5999974370005,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.5999974370005,0"
+                    Point2="95.5999974370005,0"
+                    Point3="95.5999974370005,4" />
+                  <mssgle:LineSegment
+                    End="95.5999974370005,26.999999538064" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.5999974370005,26.999999538064"
+                    Point2="95.5999974370005,30.999999538064"
+                    Point3="99.5999974370005,30.999999538064" />
+                  <mssgle:LineSegment
+                    End="183.699994874001,30.999999538064" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimSalesPerson.Paths[Sort Output]"
+          TopLeft="320.099996162951,156.599998286367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,154.399997079372"
+              Start="0,0"
+              End="0,146.899997079372">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,146.899997079372" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7423,35 +7219,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\DimStore\SourceStore"
-          TopLeft="216.999996766448,57.9999991357326" />
-        <NodeLayout
           Size="97.6,41.6"
           Id="Package\DimStore\Sort"
           TopLeft="231.999996542931,165.999997526407" />
-        <EdgeLayout
-          Id="Package\DimStore.Paths[OLE DB Source Output]"
-          TopLeft="282.699996654689,99.5999991357326">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66.3999983906746"
-              Start="0,0"
-              End="0,58.8999983906746">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.8999983906746" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DimStore\OLE DB Destination"
+          TopLeft="359.999994635582,392.999994143844" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\DimStore\SourceStore"
+          TopLeft="216.999996766448,57.9999991357326" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\DimStore\Data Conversion"
@@ -7478,10 +7256,28 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\DimStore\OLE DB Destination"
-          TopLeft="359.999994635582,392.999994143844" />
+        <EdgeLayout
+          Id="Package\DimStore.Paths[OLE DB Source Output]"
+          TopLeft="282.699996654689,99.5999991357326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.3999983906746"
+              Start="0,0"
+              End="0,58.8999983906746">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.8999983906746" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DimStore.Paths[Data Conversion Output]"
           TopLeft="273.599997079372,308.59999602139">
@@ -7549,15 +7345,23 @@
     design-time-name="Package\DimTerritory">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\DimTerritory\Sort"
+          TopLeft="297.999995559454,165.999997526407" />
         <NodeLayout
           Size="143.2,41.6"
           Id="Package\DimTerritory\SalesTerritory"
           TopLeft="244.999996349215,58.9999991208315" />
         <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\DimTerritory\Sort"
-          TopLeft="297.999995559454,165.999997526407" />
+          Size="170.4,41.6"
+          Id="Package\DimTerritory\OLE DB Destination"
+          TopLeft="513.999992340803,392.999994143844" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\DimTerritory\Data Conversion"
+          TopLeft="259.999996125698,272.999995931983" />
         <EdgeLayout
           Id="Package\DimTerritory.Paths[OLE DB Source Output]"
           TopLeft="316.599996349215,100.599999120832">
@@ -7592,48 +7396,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\DimTerritory\Data Conversion"
-          TopLeft="259.999996125698,272.999995931983" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\DimTerritory\OLE DB Destination"
-          TopLeft="513.999992340803,392.999994143844" />
-        <EdgeLayout
-          Id="Package\DimTerritory.Paths[Sort Output]"
-          TopLeft="346.799995559454,207.599997526407">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.19999943375598,65.3999984055758"
-              Start="0,0"
-              End="-9.19999943375598,57.8999984055758">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.6999992027879" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.6999992027879"
-                    Point2="0,32.6999992027879"
-                    Point3="-4,32.6999992027879" />
-                  <mssgle:LineSegment
-                    End="-5.19999943375598,32.6999992027879" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.19999943375598,32.6999992027879"
-                    Point2="-9.19999943375598,32.6999992027879"
-                    Point3="-9.19999943375598,36.6999992027879" />
-                  <mssgle:LineSegment
-                    End="-9.19999943375598,57.8999984055758" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\DimTerritory.Paths[Data Conversion Output]"
           TopLeft="337.599996125698,314.599995931983">
@@ -7660,6 +7422,42 @@
                     Point3="261.599996215105,43.1999991059303" />
                   <mssgle:LineSegment
                     End="261.599996215105,70.8999982118607" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="122.799998107553,44.1999991059303,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimTerritory.Paths[Sort Output]"
+          TopLeft="346.799995559454,207.599997526407">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.19999943375598,65.3999984055758"
+              Start="0,0"
+              End="-9.19999943375598,57.8999984055758">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6999992027879" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.6999992027879"
+                    Point2="0,32.6999992027879"
+                    Point3="-4,32.6999992027879" />
+                  <mssgle:LineSegment
+                    End="-5.19999943375598,32.6999992027879" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.19999943375598,32.6999992027879"
+                    Point2="-9.19999943375598,32.6999992027879"
+                    Point3="-9.19999943375598,36.6999992027879" />
+                  <mssgle:LineSegment
+                    End="-9.19999943375598,57.8999984055758" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
